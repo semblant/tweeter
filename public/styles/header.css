@@ -1,0 +1,8 @@
+.userInfo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FB9F89;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");;
+}
