@@ -1,0 +1,37 @@
+nav {
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color: white;
+  box-shadow: 10px 2px 5px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 1.5em;
+  box-sizing: border-box;
+  border-width: thin;
+  border-radius: 5px;
+}
+
+nav span {
+  font-family: "Bungee", sans-serif;
+  font-size: 2em;
+  line-height: 1.5em;
+  text-shadow: 2px 0px 2px;
+}
+
+
+.writeTweetContainer {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+}
+
+.writeTweetContainer i {
+  font-size: 1em;
+  margin-bottom: 10px;
+  color: orange;
+}
