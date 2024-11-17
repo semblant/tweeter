@@ -5,8 +5,9 @@ nav {
   color: white;
   box-shadow: 10px 2px 5px;
   display: flex;
-  align-items: flex-end;
-  padding: 0 1.5em;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 1.5em;
   box-sizing: border-box;
   border-width: thin;
   border-radius: 5px;
@@ -33,5 +34,4 @@ nav span {
 .writeTweetContainer i {
   font-size: 1em;
   margin-bottom: 10px;
-  color: orange;
 }
