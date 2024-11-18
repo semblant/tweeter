@@ -1,0 +1,28 @@
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+.new-tweet label {
+  box-sizing: 100%;
+  border-bottom: black;
+  border-style: solid;
+}
+  */
+
+.new-tweet textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: black;
+  border-style: solid;
+}
+.submit-and-counter {
+  padding-top: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
