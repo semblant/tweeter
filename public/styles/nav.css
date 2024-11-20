@@ -6,10 +6,12 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1em 1.5em;
+  padding: 1rem 1.5rem;
   box-sizing: border-box;
   border-width: thin;
   border-radius: 5px;
+  overflow: hidden;
+  top: 0;
 }
 
 nav .title {
