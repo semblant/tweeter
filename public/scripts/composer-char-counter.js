@@ -16,11 +16,5 @@ $(document).ready(function() {
       $counter.css("color", "#a49e96");
     }
   });
-
-
-  $("#tweet-container").hover(function() {
-    $(this).css("box-shadow", "2px 2px 2px darkgrey")
-  });
-
 });
 

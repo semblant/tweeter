@@ -3,14 +3,6 @@
   flex-direction: column;
 }
 
-/*
-.new-tweet label {
-  box-sizing: 100%;
-  border-bottom: black;
-  border-style: solid;
-}
-  */
-
 .new-tweet textarea {
   width: 100%;
   box-sizing: border-box;
