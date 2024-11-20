@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="/styles/nav.css" type="text/css">
   <link rel="stylesheet" href="/styles/header.css" type="text/css">
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css">
+  <link rel="stylesheet" href="/styles/tweet.css" type="text/css">
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -36,7 +37,7 @@
     </div>
   </nav>
 
-  <header>
+  <header id="user-info">
     <div class="userAvatar">
       <img src="/images/profile-hex.png">
     </div>
@@ -61,14 +62,43 @@
         </div>
       </form>
     </section>
-    <h1>Lorem Ipsum</h1>
-    <p>The classic Latin passage that just never gets old, enjoy as much (or as little) lorem ipsum as you can handle with our easy to use filler text generator.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 
-    <h1>Hipster Ipsum</h1>
-    <p>A handcrafted, small-batch, artisinal pour-over version of the classic lorem ipsum generator, Hipster Ipsum will give your mocks that blue collar touch.</p>
-    <p>Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. Brunch raclette vexillologist post-ironic glossier ennui XOXO mlkshk godard pour-over blog tumblr humblebrag. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue bottle ennui tbh succulents.</p>
+    <section class="tweet-container">
+
+      <article>
+        <header>
+          <p>[AVATAR] NAME OF USER</p>
+          <p>@HANDLE</p>
+        </header>
+        <p id="tweet-container-text">This is my tweet</p>
+        <footer>
+        <p>x days ago</p>
+        <div class="footer-icons ">
+          <i class="fa-solid fa-flag"></i>
+          <i class="fa-solid fa-retweet"></i>
+          <i class="fa-solid fa-heart"></i>
+        </div>
+        </footer>
+      </article>
+
+      <article>
+        <header>
+          <p>[AVATAR] NAME OF USER</p>
+          <p>@HANDLE</p>
+        </header>
+        <p id="tweet-container-text">This is another tweet</p>
+        <footer>
+        <p>x days ago</p>
+        <div class="footer-icons ">
+          <i class="fa-solid fa-flag"></i>
+          <i class="fa-solid fa-retweet"></i>
+          <i class="fa-solid fa-heart"></i>
+        </div>
+        </footer>
+      </article>
+
+    </section>
+
   </main>
-
 
 </body></html>
