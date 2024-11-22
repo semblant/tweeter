@@ -43,14 +43,21 @@ $(document).ready(function() {
    */
 
   const createTweetElement = function(tweet) {
+    /*
+      In your createTweetElement function, you're directly assigning the values from the tweet object to variables. While this works, it might be cleaner to use destructuring to extract the values. For example, you could write:
+
+      const { name: userName, avatars: userAvatar, handle: userHandle } = tweet.user;
+      const { text: tweetContent } = tweet.content;
+    */
+
     // Store info from the tweet
-    userName = tweet.user.name;
-    userAvatar = tweet.user.avatars;
-    userHandle = tweet.user.handle;
-    tweetContent = tweet.content.text;
-    tweetCreateDate = tweet.created_at;
-    todayDate = Date.now();
-    dateDiff = Math.floor((todayDate - tweetCreateDate) / (86400000));
+    const userName = tweet.user.name;
+    const userAvatar = tweet.user.avatars;
+    const userHandle = tweet.user.handle;
+    const tweetContent = tweet.content.text;
+    const tweetCreateDate = tweet.created_at;
+    const todayDate = Date.now();
+    const dateDiff = Math.floor((todayDate - tweetCreateDate) / (86400000));
 
     // Create HTML variable
     const $tweet = `<article class='tweet'>
@@ -82,7 +89,7 @@ const renderTweets = function(tweets) {
   // Loop through each tweet in the DB
   for (const $tweet of tweets) {
     const $tweetElement =  createTweetElement($tweet); // get HTML format of tweet
-    $('.tweet-container').append($tweetElement); // append tweet in HTML
+    $('.tweets-container').prepend($tweetElement); // append tweet in HTML
   }
 }
   renderTweets(tweetData)
