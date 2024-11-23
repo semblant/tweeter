@@ -62,19 +62,31 @@ const renderTweets = function(tweets) {
   }
 }
 
-
   // Add event listener to send tweet data to server on submit
   $('#tweet-form').on('submit', function(event) {
     event.preventDefault();
-    $(this).serialize();
 
     // Get values from elements on the page
     const $form = $(this);
     const content = $form.find("textarea[name='text']").val();
+    //console.log($form.serialize("textarea[name='text']")) // not sure how to use serialize()
+    //const content = $form.serialize();
     const url = $form.attr("action");
 
+    // Validation
+    if (!content) {
+      return alert("Tweet cannot be blank!");
+    }
+
+    if (content.length > 140) {
+      return alert('Cannot tweet more than 140 characters');
+    }
+
     // Send the data using post
-    $.post(url, { text: content });
+    $.post(url, { text: content })
+    .catch((err) => {
+      alert(err) // doesn't work?
+    });
   });
 
   /**
@@ -84,6 +96,9 @@ const renderTweets = function(tweets) {
     $.get('/tweets')
     .then((tweets) => { // after successful get request
       renderTweets(tweets)
+    })
+    .catch((e) => { // catch any errors
+
     })
   }
 
