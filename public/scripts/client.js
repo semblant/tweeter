@@ -99,13 +99,16 @@ const loadTweets = function() {
 *        - true: tweet is valid
 */
 const validateTweet = function(tweet) {
-if (!tweet) {
-  return alert("Tweet cannot be blank!");
-}
-if (tweet.length > 140) {
-  return alert('Cannot tweet more than 140 characters');
-}
-return true;
+  if (!tweet) {
+    $('.blankError').slideDown(); // Show empty tweet error
+    return;
+  }
+  if (tweet.length > 140) {
+    $('.charError').slideDown(); // Show character limit error
+    return;
+  }
+  $('.errorBox').slideUp(); // Hide previous errors
+  return true; // Valid tweet
 }
 
 
@@ -123,6 +126,7 @@ $(document).ready(function() {
     const url = $form.attr("action");
 
     // Validation
+    $('.errorBox').slideUp(); // Hide previous errors
     if (!validateTweet(content)) return;
 
     // Send the data using post
