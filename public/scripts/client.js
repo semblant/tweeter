@@ -4,6 +4,19 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+/**
+ *  Function that takes in the text of a tweet and escapes the text to protect from XSS.
+ *
+ * @param {String} tweetText - the tweet to escape
+ * @returns
+ *         the inner HTML of the section???
+ */
+const escapeChars = function (tweetText) {
+  let section = document.createElement("section");
+  section.appendChild(document.createTextNode(tweetText));
+  return section.innerHTML;
+};
+
  /**
    * Function takes a tweet object and returns the HTML for the object
    *
@@ -28,14 +41,14 @@
   const tweetCreateDate = tweet.created_at;
 
   // Create HTML variable
-  const $tweet = `<article class='tweet'>
+  const tweetDetails = `<article class='tweet'>
       <header>
         <span class="tweet-name">
           <img class="avatar" src=${userAvatar}/> ${userName}
         </span>
         <h3>${userHandle}</h3>
       </header>
-      <section class='tweet-text'>${tweetContent}</section>
+      <section class='tweet-text'>${escapeChars(tweetContent)}</section>
       <footer>
         <span> ${timeago.format(tweetCreateDate)}</span>
         <div class='tweet-icons'>
@@ -45,7 +58,7 @@
         </div>
       </footer>
     </article>`;
-  return $tweet;
+  return tweetDetails;
 };
 
 /**
@@ -66,6 +79,7 @@ for (const $tweet of tweets) {
  * Function that makes a request to '/', grabs the results and passes them to the renderTweets function
  */
 const loadTweets = function() {
+  $('.tweets-container').empty();
   $.get('/tweets')
   .then((tweets) => { // after successful get request
     renderTweets(tweets)
@@ -112,7 +126,7 @@ $(document).ready(function() {
     if (!validateTweet(content)) return;
 
     // Send the data using post
-    $.post(url, { text: content })
+    $.post(url, { text: content }) // Larry suggests:  replace { text: content } with $form.serialize(). => doesn't work semantically?
     .catch((err) => {
       alert(err);
     })
