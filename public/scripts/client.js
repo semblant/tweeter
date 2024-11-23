@@ -114,6 +114,11 @@ const validateTweet = function(tweet) {
 
 // Requests the tweets path to render tweets and handles tweet submission
 $(document).ready(function() {
+  // Add event listener to display tweet form on click of the 'Write a new tweet' arrows
+  $('.fa-solid.fa-angles-down').on('click', function() {
+    $('.new-tweet').slideToggle();
+  })
+
   // Add event listener to send tweet data to server on submit
   $('#tweet-form').on('submit', function(event) {
     event.preventDefault();

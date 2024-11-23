@@ -1,6 +1,9 @@
 .new-tweet {
-  display: flex;
+  width: 100%;
+  display: none;
   flex-direction: column;
+  justify-content: center;
+  margin-top: 3rem;
 }
 
 .new-tweet textarea {
@@ -17,4 +20,16 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.submit-and-counter button {
+  color: white;
+  background-color: #4056A1;
+  border: none;
+  border-radius: 2px;
+  font-family: 'Bungee', sans-serif;
+}
+
+.submit-and-counter button:hover {
+  box-shadow: 2px 2px 2px 0 black;
 }

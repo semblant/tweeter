@@ -21,6 +21,20 @@ nav .title {
   text-shadow: 2px 0px 2px;
 }
 
+.newTweetArrow {
+  padding-top: 5px;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+.newTweetArrow:hover {
+  animation: bounce 0.3s infinite alternate
+}
+
+@keyframes bounce {
+  to { transform: scale(1.2); }
+}
 
 .writeTweetContainer {
   font-size: 20px;
