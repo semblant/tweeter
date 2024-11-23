@@ -93,6 +93,21 @@ const renderTweets = function(tweets) {
   }
 }
   renderTweets(tweetData)
+
+  // Add event listener to send tweet data to server on submit
+  $('#tweet-form').on('submit', function(event) {
+    event.preventDefault();
+    $(this).serialize();
+
+    // Get values from elements on the page
+    const $form = $(this);
+    const content = $form.find("textarea[name='text']").val();
+    const url = $form.attr("action");
+
+    // Send the data using post
+    $.post(url, { text: content });
+
+  });
 });
 
 
