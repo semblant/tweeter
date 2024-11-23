@@ -117,6 +117,7 @@ $(document).ready(function() {
   // Add event listener to send tweet data to server on submit
   $('#tweet-form').on('submit', function(event) {
     event.preventDefault();
+    $('.errorBox').slideUp(); // Hide previous errors
 
     // Get values from elements on the page
     const $form = $(this);
@@ -126,7 +127,6 @@ $(document).ready(function() {
     const url = $form.attr("action");
 
     // Validation
-    $('.errorBox').slideUp(); // Hide previous errors
     if (!validateTweet(content)) return;
 
     // Send the data using post

@@ -1,11 +1,10 @@
 .blankError,
 .charError {
   color: white;
-  height: 30px;
+  font-size: 20px;
+  height: 45px;
   background-color: rgb(221, 98, 98);
-  font-size: 0.9rem;
-  padding: 6px 0 0 6px;
+  padding: 10px 0 0 10px;
   display: none;
-  align-items: center;
   border-radius: 2px;
 }
