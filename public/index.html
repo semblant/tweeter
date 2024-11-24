@@ -35,7 +35,7 @@
     <span class="title">tweeter</span>
     <div class="writeTweetContainer">
       <a class="writeTweet">Write a new tweet</a>
-      <button class="newTweetArrow" type="radio"><i class="fa-solid fa-angles-down"></i></button>
+      <button class="newTweetArrow"><i class="fa-solid fa-angles-down"></i></button>
     </div>
   </nav>
 
@@ -52,7 +52,7 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
 
-    <section class="new-tweet">
+    <section class="new-tweet tweet-form-section">
       <form id="tweet-form" method="POST" action="http://localhost:8080/tweets">
         <!-- <label for="tweet-text">What are you humming about?</label> -->
         <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
@@ -67,11 +67,12 @@
         </div>
       </form>
 
-
     </section>
 
     <section class="tweets-container">
+      <button onclick="scrollToTop()" id="scrollUpButton" hidden><i class="fa-solid fa-angles-up"></i></button>
     </section>
+
 
   </main>
 

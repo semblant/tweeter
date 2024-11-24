@@ -67,11 +67,11 @@ const escapeChars = function (tweetText) {
 * @param {Object} tweets - database of tweets
 */
 const renderTweets = function(tweets) {
-// Loop through each tweet in the DB
-for (const $tweet of tweets) {
-  const $tweetElement =  createTweetElement($tweet); // get HTML format of tweet
-  $('.tweets-container').prepend($tweetElement); // append tweet in HTML
-}
+  // Loop through each tweet in the DB
+  for (const $tweet of tweets) {
+    const $tweetElement =  createTweetElement($tweet); // get HTML format of tweet
+    $('.tweets-container').prepend($tweetElement); // append tweet in HTML
+  }
 }
 
 
@@ -79,7 +79,6 @@ for (const $tweet of tweets) {
  * Function that makes a request to '/', grabs the results and passes them to the renderTweets function
  */
 const loadTweets = function() {
-  $('.tweets-container').empty();
   $.get('/tweets')
   .then((tweets) => { // after successful get request
     renderTweets(tweets)
@@ -111,13 +110,38 @@ const validateTweet = function(tweet) {
   return true; // Valid tweet
 }
 
+/**
+ * Function scrolls to the top of the page when called
+ */
+const scrollToTop = function() {
+  window.scrollTo(0,0); // scroll to stop of document
+}
 
 // Requests the tweets path to render tweets and handles tweet submission
 $(document).ready(function() {
   // Add event listener to display tweet form on click of the 'Write a new tweet' arrows
   $('.fa-solid.fa-angles-down').on('click', function() {
-    $('.new-tweet').slideToggle();
+    $('.tweet-form-section').slideToggle();
   })
+
+  // Add event listener to display 'top of page' arrow on scroll
+  $(window).on('scroll', () => {
+    const currentScrollTop = $(this).scrollTop();
+
+    // Show/hide writeTweetContainer based on scroll direction
+    if (currentScrollTop > 0) {
+      $('.writeTweetContainer').slideUp(); // scrolling down
+    } else {
+      $('.writeTweetContainer').slideDown(); // scrolling up
+    }
+
+    // Show/hide scrollUpButton based on scroll
+    if (currentScrollTop > 0) {
+      $('#scrollUpButton').show(); // show button if not at the top
+    } else {
+      $('#scrollUpButton').hide(); // hide the button if at the top
+    }
+  });
 
   // Add event listener to send tweet data to server on submit
   $('#tweet-form').on('submit', function(event) {
@@ -140,8 +164,11 @@ $(document).ready(function() {
       alert(err);
     })
     .done(() => {
+      $form.find("textarea[name='text']").val(""); // clear form
       loadTweets(); // load newest tweet
     });
+
+
   });
 
   loadTweets();
