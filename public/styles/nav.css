@@ -68,5 +68,6 @@ nav .title {
 
 #scrollUpButton:hover {
   box-shadow: 2px 2px 2px 0 black; /* Add a dark-grey background on hover */
+  transition: box-shadow 0.3s ease;
 }
 

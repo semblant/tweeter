@@ -114,7 +114,7 @@ const validateTweet = function(tweet) {
  * Function scrolls to the top of the page when called
  */
 const scrollToTop = function() {
-  window.scrollTo(0,0); // scroll to stop of document
+  $('html, body').animate({scrollTop:0}, 'slow') // scroll to stop of document
 }
 
 // Requests the tweets path to render tweets and handles tweet submission
@@ -126,7 +126,7 @@ $(document).ready(function() {
 
   // Add event listener to display 'top of page' arrow on scroll
   $(window).on('scroll', () => {
-    const currentScrollTop = $(this).scrollTop();
+    const currentScrollTop = $(window).scrollTop();
 
     // Show/hide writeTweetContainer based on scroll direction
     if (currentScrollTop > 0) {
