@@ -28,16 +28,6 @@
   padding-bottom: 1rem;
 }
 
-section.tweet-text {
-  border-top: 0px;
-  border-left: 0px;
-  border-right: 0px;
-  border-bottom: 2px rgb(48, 45, 45);
-  border-style: solid;
-  padding-bottom: 2rem;
-  margin: 0 0;
-}
-
 .tweet footer {
   display: flex;
   flex-direction: row;

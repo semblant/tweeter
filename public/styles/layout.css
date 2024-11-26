@@ -35,8 +35,34 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- main {
+.main-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
   width: 90%;
   margin: 0 auto;
   background-color: inherit;
  }
+
+ /* Desktop styles */
+@media only screen and (min-width: 961px) {
+  .main-layout {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 100px;
+  }
+  #user-info {
+    flex: 0.5;
+    margin: 0 50px;
+    flex-basis: 500px;
+    flex-shrink: 1;
+  }
+  .container {
+    width: 60%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-right: 50px;
+  }
+}

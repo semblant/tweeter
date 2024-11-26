@@ -5,6 +5,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 50px;
   background-color: #FB9F89;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");;
+}
+
+
+/* Avatar and Name Stlying */
+.userAvatar {
+  padding-top: 30px;
+  height: 250px;
+  padding-bottom: 0;
+}
+
+.userName {
+  padding-top: 0;
+  padding-bottom: 25px;
 }

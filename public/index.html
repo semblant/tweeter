@@ -39,41 +39,42 @@
     </div>
   </nav>
 
-  <header id="user-info">
-    <div class="userAvatar">
-      <img src="/images/profile-hex.png">
-    </div>
-    <br>
-    <div class="userName">
-      <h2>Your Name</h2>
-    </div>
-  </header>
+  <div class="main-layout">
+    <header id="user-info">
+      <div class="userAvatar">
+        <img class="userAvatar" src="/images/profile-hex.png">
+      </div>
+      <br>
+      <div class="userName">
+        <h2>Your Name</h2>
+      </div>
+    </header>
 
-  <!-- Page-specific (main) content here -->
-  <main class="container">
+    <!-- Page-specific (main) content here -->
+    <main class="container">
 
-    <section class="new-tweet tweet-form-section">
-      <form id="tweet-form" method="POST" action="http://localhost:8080/tweets">
-        <!-- <label for="tweet-text">What are you humming about?</label> -->
-        <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+      <section class="new-tweet tweet-form-section">
+        <form id="tweet-form" method="POST" action="http://localhost:8080/tweets">
+          <!-- <label for="tweet-text">What are you humming about?</label> -->
+          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
 
-        <!-- Errors -->
-        <div class="errorBox blankError" hidden>Tweet cannot be blank!</div>
-        <div class="errorBox charError" hidden>Cannot tweet more than 140 characters</div>
+          <!-- Errors -->
+          <div class="errorBox blankError" hidden>Tweet cannot be blank!</div>
+          <div class="errorBox charError" hidden>Cannot tweet more than 140 characters</div>
 
-        <div class="submit-and-counter">
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
+          <div class="submit-and-counter">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
 
-    </section>
+      </section>
 
-    <section class="tweets-container">
-      <button onclick="scrollToTop()" id="scrollUpButton" hidden><i class="fa-solid fa-angles-up"></i></button>
-    </section>
+      <section class="tweets-container">
+        <button onclick="scrollToTop()" id="scrollUpButton" hidden><i class="fa-solid fa-angles-up"></i></button>
+      </section>
 
 
-  </main>
-
+    </main>
+  </div>
 </body></html>
