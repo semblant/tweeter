@@ -1,3 +1,5 @@
+@use 'base';
+
 .new-tweet {
   width: 100%;
   display: none;
@@ -11,7 +13,6 @@
   border-bottom: 2px black;
   border-style: solid;
 }
-
 .submit-and-counter {
   padding-top: 1em;
   display: flex;
@@ -20,11 +21,11 @@
 }
 
 .submit-and-counter button {
-  color: white;
-  background-color: 4056A1;
+  color: base.$text-colour;
+  background-color: base.$primary-colour;
   border: none;
   border-radius: 2px;
-  font-family: "Bungee", sans-serif;
+  font-family: base.$nav-font-family;
 }
 
 .submit-and-counter button:hover {

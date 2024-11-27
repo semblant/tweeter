@@ -1,3 +1,5 @@
+@use 'base';
+
 /*
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  * https://css-tricks.com/international-box-sizing-awareness-day/
@@ -6,7 +8,6 @@
 html {
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -14,19 +15,20 @@ html {
 /*
  * Global layout stuff
  */
+
 nav {
-  background-color: 4056A1;
-  color: white;
-  font-size: 24px;
-  font-family: "Bungee", sans-serif;
+  background-color: base.$primary-colour;
+  color: base.$text-colour;
+  font-size: base.$primary-font-size;
+  font-family: base.$nav-font-family;
   font-weight: 400 600;
 }
 
 body {
   color: #545149;
   background-color: #f4f1ec;
-  font-size: 24px;
-  font-family: "Source Sans 3", sans-serif;
+  font-size: base.$primary-font-size;
+  font-family: base.$body-font-family;
   font-weight: 300, 600;
   padding-top: 120px;
 }
@@ -34,6 +36,7 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
 .main-layout {
   display: flex;
   flex-direction: column;
@@ -43,9 +46,9 @@ main {
   width: 90%;
   margin: 0 auto;
   background-color: inherit;
-}
+ }
 
-/* Desktop styles */
+ /* Desktop styles */
 @media only screen and (min-width: 961px) {
   .main-layout {
     flex-direction: row;

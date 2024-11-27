@@ -1,0 +1,12 @@
+@use 'base';
+
+.blankError,
+.charError {
+  color: base.$text-colour;
+  font-size: 20px;
+  height: 45px;
+  background-color: rgb(221, 98, 98);
+  padding: 10px 0 0 10px;
+  display: none;
+  border-radius: 2px;
+}

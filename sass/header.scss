@@ -1,3 +1,10 @@
+@mixin align($align: center) {
+  align-items: $align;
+  padding-top: 30px;
+  height: 250px;
+  padding-bottom: 0;
+}
+
 #user-info {
   height: 400px;
   width: 100%;
@@ -7,15 +14,13 @@
   justify-content: center;
   margin-bottom: 50px;
   background-color: #FB9F89;
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");;
 }
+
 
 /* Avatar and Name Stlying */
 .userAvatar {
-  align-items: center;
-  padding-top: 30px;
-  height: 250px;
-  padding-bottom: 0;
+  @include align
 }
 
 .userName {

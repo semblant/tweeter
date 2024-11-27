@@ -1,3 +1,5 @@
+@use 'base';
+
 nav {
   position: fixed;
   height: 120px;
@@ -14,43 +16,48 @@ nav {
   top: 0;
 }
 
-nav .title {
-  font-family: "Bungee", sans-serif;
-  font-size: 2em;
-  line-height: 1.5em;
-  text-shadow: 2px 0px 2px;
-}
-nav .newTweetArrow {
-  padding-top: 5px;
-  background-color: transparent;
-  border: none;
-  color: white;
-}
-nav .newTweetArrow:hover {
-  animation: bounce 0.3s infinite alternate;
-}
-@keyframes bounce {
-  to {
-    transform: scale(1.2);
+nav {
+  .title {
+    font-family: base.$nav-font-family;
+    font-size: 2em;
+    line-height: 1.5em;
+    text-shadow: 2px 0px 2px;
   }
-}
-nav .writeTweetContainer {
-  font-size: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-nav .writeTweetContainer i {
-  font-size: 1em;
-  margin-bottom: 10px;
+
+  .newTweetArrow {
+    padding-top: 5px;
+    background-color: transparent;
+    border: none;
+    color: base.$text-colour;
+  }
+
+  .newTweetArrow:hover {
+    animation: bounce 0.3s infinite alternate
+  }
+
+  @keyframes bounce {
+    to { transform: scale(1.2); }
+  }
+
+  .writeTweetContainer {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .writeTweetContainer i {
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
 }
 
 #scrollUpButton {
-  background-color: 4056A1;
+  background-color: base.$primary-colour;
   border: none;
   border-radius: 50px;
-  color: white;
+  color: base.$text-colour;
   padding: 10px;
   display: none;
   position: fixed;
@@ -71,6 +78,6 @@ nav .writeTweetContainer i {
     width: 75%;
     display: flex;
     flex-direction: row;
-    margin: 50px;
+    margin: 50px
   }
 }
