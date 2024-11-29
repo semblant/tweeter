@@ -66,7 +66,6 @@ $(document).ready(function() {
       loadTweets(); // load newest tweet
     });
   });
-
   loadTweets();
 });
 

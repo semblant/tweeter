@@ -63,13 +63,13 @@ export const escapeChars = function (tweetText) {
 * @param {Object} tweets - database of tweets
 */
 export const renderTweets = function(tweets) {
+  $('.tweets-container').empty() // clear list of tweets to avoid duplicates
   // Loop through each tweet in the DB
   for (const $tweet of tweets) {
     const $tweetElement =  createTweetElement($tweet); // get HTML format of tweet
     $('.tweets-container').prepend($tweetElement); // append tweet in HTML
   }
 }
-
 
 /**
  * Function that makes a request to '/', grabs the results and passes them to the renderTweets function
