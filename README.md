@@ -23,3 +23,7 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 
+!["Screenshot of full Tweeter app"](https://github.com/semblant/tweeter/blob/main/docs/fullTweetScreen.png?raw=true)
+!["Screenshit of Tweeter in Mobile View"](https://github.com/semblant/tweeter/blob/main/docs/MobileView.png?raw=true)
+!["Screenshot of scroll up button"](https://github.com/semblant/tweeter/blob/main/docs/ScrollUpButton.png?raw=true)
+!["Screenshot of tweet box errors"](https://github.com/semblant/tweeter/blob/main/docs/TweetBoxErrors.png?raw=true)
