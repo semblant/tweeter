@@ -20,27 +20,30 @@ $(document).ready(function() {
   $(window).on('scroll', () => {
     const currentScrollTop = $(window).scrollTop(); // store current scroll
 
-    // Show/hide writeTweetContainer based on scroll direction
+    if (currentScrollTop > 0) {
+      $('#scrollUpButton').fadeIn(200); // Show button when not at the top
+      console.log('Scroll Top:', currentScrollTop);
+      console.log('Last Scroll:', lastScrollTop);
+      console.log('Button Visibility:', $('#scrollUpButton').is(':visible')); // always false???
+    } else {
+      $('#scrollUpButton').fadeOut(200); // Hide button when at the top
+    }
+
+    // Show/hide writeTweetContainer and scrollUpButton based on scroll direction
     if (currentScrollTop > lastScrollTop) {
       if ($('.writeTweetContainer').is(':visible')) {
         $('.writeTweetContainer').fadeOut(200); // Fade out (hide)
       }
     } else { // Scrolling up
-      if (currentScrollTop <= 100) {
+      if (currentScrollTop <= 80) {
         if (!$('.writeTweetContainer').is(':visible')) {
           $('.writeTweetContainer').fadeIn('slow'); // Fade in (show)
         }
       }
     }
+
     // Update the last scroll position
     lastScrollTop = currentScrollTop;
-
-    // Show/hide scrollUpButton based on scroll
-    if (currentScrollTop > 0) {
-      $('#scrollUpButton').show(); // show button if not at the top
-    } else {
-      $('#scrollUpButton').hide(); // hide the button if at the top
-    }
   });
 
   // Add event listener to send tweet data to server on submit
