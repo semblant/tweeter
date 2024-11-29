@@ -1,4 +1,8 @@
 #user-info {
+  align-items: center;
+  padding-top: 30px;
+  height: 250px;
+  padding-bottom: 0;
   height: 400px;
   width: 100%;
   display: flex;
@@ -12,13 +16,12 @@
 
 /* Avatar and Name Stlying */
 .userAvatar {
-  align-items: center;
-  padding-top: 30px;
-  height: 250px;
-  padding-bottom: 0;
+  height: 200px;
 }
 
 .userName {
+  font-size: 30px;
+  color: white;
   padding-top: 0;
   padding-bottom: 25px;
 }

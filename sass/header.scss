@@ -6,6 +6,7 @@
 }
 
 #user-info {
+  @include align;
   height: 400px;
   width: 100%;
   display: flex;
@@ -17,13 +18,14 @@
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");;
 }
 
-
 /* Avatar and Name Stlying */
 .userAvatar {
-  @include align
+  height: 200px
 }
 
 .userName {
+  font-size: 30px;
+  color: white;
   padding-top: 0;
   padding-bottom: 25px;
 }

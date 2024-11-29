@@ -21,7 +21,7 @@ nav .title {
   text-shadow: 2px 0px 2px;
 }
 nav .newTweetArrow {
-  padding-top: 5px;
+  padding-top: 10px;
   background-color: transparent;
   border: none;
   color: white;
@@ -40,10 +40,6 @@ nav .writeTweetContainer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-nav .writeTweetContainer i {
-  font-size: 1em;
-  margin-bottom: 10px;
 }
 
 #scrollUpButton {
