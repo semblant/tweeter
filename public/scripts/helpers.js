@@ -105,3 +105,12 @@ export const validateTweet = function(tweet) {
   $('.errorBox').slideUp(); // Hide previous errors
   return true; // Valid tweet
 }
+
+/**
+ * Function scrolls to the top of the page when called
+ */
+export const scrollToTop = function() {
+  window.scrollTo(0,0); // scroll to stop of document
+  $('html, body').animate({scrollTop:0}, 'slow') // scroll to stop of document
+}
+window.scrollToTop = scrollToTop // Make scrollToTop available globally

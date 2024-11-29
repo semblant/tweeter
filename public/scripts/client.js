@@ -14,15 +14,26 @@ $(document).ready(function() {
   })
 
   // Add event listener to display 'top of page' arrow on scroll
+  // Store last scroll position
+  let lastScrollTop = 0;
+
   $(window).on('scroll', () => {
-    const currentScrollTop = $(window).scrollTop();
+    const currentScrollTop = $(window).scrollTop(); // store current scroll
 
     // Show/hide writeTweetContainer based on scroll direction
-    if (currentScrollTop > 0) {
-      $('.writeTweetContainer').slideUp(); // scrolling down
-    } else {
-      $('.writeTweetContainer').slideDown(); // scrolling up
+    if (currentScrollTop > lastScrollTop) {
+      if ($('.writeTweetContainer').is(':visible')) {
+        $('.writeTweetContainer').fadeOut(200); // Fade out (hide)
+      }
+    } else { // Scrolling up
+      if (currentScrollTop <= 100) {
+        if (!$('.writeTweetContainer').is(':visible')) {
+          $('.writeTweetContainer').fadeIn('slow'); // Fade in (show)
+        }
+      }
     }
+    // Update the last scroll position
+    lastScrollTop = currentScrollTop;
 
     // Show/hide scrollUpButton based on scroll
     if (currentScrollTop > 0) {
@@ -40,15 +51,13 @@ $(document).ready(function() {
     // Get values from elements on the page
     const $form = $(this);
     const content = $form.find("textarea[name='text']").val();
-    //console.log($form.serialize("textarea[name='text']")) // not sure how to use serialize()
-    //const content = $form.serialize();
     const url = $form.attr("action");
 
     // Validation
     if (!validateTweet(content)) return;
 
     // Send the data using post
-    $.post(url, { text: content }) // Larry suggests:  replace { text: content } with $form.serialize(). => doesn't work semantically?
+    $.post(url, { text: content })
     .catch((err) => {
       alert(err);
     })
@@ -56,8 +65,6 @@ $(document).ready(function() {
       $form.find("textarea[name='text']").val(""); // clear form
       loadTweets(); // load newest tweet
     });
-
-
   });
 
   loadTweets();

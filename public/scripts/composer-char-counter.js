@@ -10,7 +10,7 @@ $(document).ready(function() {
     $counter.val(remainingChars);
 
     // Change Colour based on remaining characters
-    if (remainingChars < 0 ) {
+    if (remainingChars < 0) {
       $counter.css("color", "red");
     } else {
       $counter.css("color", "#a49e96");
